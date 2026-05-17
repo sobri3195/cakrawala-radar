@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cakrawala-radar"
+version = "0.1.0"
+description = "AI-powered airspace surveillance simulation and multi-sensor fusion toolkit for Indonesia-focused research."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  { name = "Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE", email = "muhammadsobrimaulana31@gmail.com" }
+]
+keywords = [
+  "radar",
+  "simulation",
+  "ads-b",
+  "sensor-fusion",
+  "anomaly-detection",
+  "airspace",
+  "indonesia",
+  "research"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "typer",
+  "rich",
+]
+
+[project.optional-dependencies]
+ml = ["scikit-learn"]
+dev = ["pytest", "pytest-cov", "ruff", "mypy", "build", "twine"]
+
+[project.scripts]
+cakrawala-radar = "cakrawala_radar.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/sobri3195"
+Documentation = "https://github.com/sobri3195#readme"
+Author = "https://muhammadsobrimaulana.netlify.app"
+Funding = "https://lynk.id/muhsobrimaulana"
+YouTube = "https://www.youtube.com/@muhammadsobrimaulana6013"
+Telegram = "https://t.me/winlin_exploit"
+TikTok = "https://www.tiktok.com/@dr.sobri"
+WhatsApp = "https://chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl"
+Store = "https://pegasus-shop.netlify.app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
